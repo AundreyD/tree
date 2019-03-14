@@ -3,8 +3,11 @@
     <div class="card">
       <div class="card-body">
         <h5 class="card-title"><input [(ngModel)]="title" class="factory-title form-control"></h5>
-        <input type='number' max="15" [(ngModel)]="children"  class="form-control children-input">
-        <button (click)="generate()" class="btn btn-primary">Generate Children</button>
+        <input type='number' min="0" max="15" 
+        onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+        [(ngModel)]="children"  
+        class="form-control children-input">
+        <button (click)="generate()" class="btn btn-primary" [disabled]="children == 0">Generate Children</button>
         <button class="btn btn-danger" (click)="deleteMe()">DELETE FACTORY</button>
       </div>
     </div>

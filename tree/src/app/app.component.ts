@@ -8,7 +8,7 @@ import { FactoryComponent } from './factory/factory.component';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
   title = 'tree';
   roots = [[]];
   factories = 0;
@@ -24,7 +24,7 @@ export class AppComponent implements OnInit{
     for (const i of this.roots) {
       // const x = this.helpers.random_num(15);
         for (let y = 0; y <= this.factories - 1; y++) {
-        i.push({title: '', index: y });
+        i.push({title: 'Placeholder Title', index: y });
         }
     }
   }

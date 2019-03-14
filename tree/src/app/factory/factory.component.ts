@@ -21,6 +21,7 @@ export class FactoryComponent implements OnInit {
 
   ngOnInit() {
     console.log('data', this.data);
+    this.children = 0;
     this.title = this.data.title;
     this.index = this.data.index;
   }

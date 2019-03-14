@@ -5,7 +5,10 @@
             <div class="card-body">
                 <h5 class="card-title">Head Node</h5>
                 <div class="generator ">
-                    <input type='number' max="15" [(ngModel)]="factories"  class="form-control factory-input">
+                    <input type='number' min="0" max="15" 
+                     onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+                     [(ngModel)]="factories"  
+                     class="form-control factory-input">
                     <button (click)="generate()" class="btn btn-primary" [disabled]="factories == 0">Generate Factories</button>
                 </div>
             </div>
