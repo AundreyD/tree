@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-child',
@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChildComponent implements OnInit {
 
+  @Input()
+  data;
+  start;
+  end;
+
   constructor() { }
 
   ngOnInit() {
+    this.start = '00:00';
+    this.end = '00:00';
   }
 
 }

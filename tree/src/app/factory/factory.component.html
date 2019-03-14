@@ -1,3 +1,16 @@
-<li>
-  factory works!
+<li class="list">
+  <div class="row">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title"><input [(ngModel)]="title" class="factory-title form-control"></h5>
+        <input type='number' max="15" [(ngModel)]="children"  class="form-control children-input">
+        <button (click)="generate()" class="btn btn-primary">Generate Children</button>
+        <button class="btn btn-danger" (click)="deleteMe()">DELETE FACTORY</button>
+      </div>
+    </div>
+  </div>
 </li>
+<ul>
+    <app-child *ngFor="let x of self[0]" [data]="x" ></app-child>
+</ul> 
+

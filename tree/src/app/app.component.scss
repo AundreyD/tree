@@ -12,3 +12,18 @@
     height: 100%;
     position: relative;
    }
+   .root {
+       margin-top: 2%;
+       .factory-input {
+           margin-bottom: 2%;
+           max-width: 150px;
+       }
+       .btn {
+           width: 150px;
+       }
+       .card {
+           width: 300px;
+           background-color: rgb(63, 17, 45);
+           color: whitesmoke
+       }
+   }

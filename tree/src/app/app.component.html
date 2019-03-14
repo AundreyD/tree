@@ -1,9 +1,18 @@
 <app-header></app-header>
-<ul *ngFor="let root of roots">
-    
-        <app-factory *ngFor="let x of root"></app-factory>
-    
-    yes
-</ul>
-<app-footer></app-footer>
+<div class="container root">
+    <div class="row">
+        <div class='card'>
+            <div class="card-body">
+                <h5 class="card-title">Head Node</h5>
+                <div class="generator ">
+                    <input type='number' max="15" [(ngModel)]="factories"  class="form-control factory-input">
+                    <button (click)="generate()" class="btn btn-primary" [disabled]="factories == 0">Generate Factories</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <ul class="fa-ul">
+        <app-factory *ngFor="let x of roots[0]" [data]=x (deletedFactory)="removeFactory($event)"></app-factory>
+    </ul>
+</div>
 <router-outlet></router-outlet>

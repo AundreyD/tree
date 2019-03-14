@@ -10,20 +10,49 @@ import { FactoryComponent } from './factory/factory.component';
 })
 export class AppComponent implements OnInit{
   title = 'tree';
-  roots = [];
-  factories: number;
+  roots = [[]];
+  factories = 0;
+  children: number;
 
   constructor(private helpers: HelpersService) {}
   ngOnInit() {
-    for (let i = 0; i < 3; i++) {
-      this.roots.push([]);
-    }
+  }
+
+  generate() {
+    console.log('generate factories');
+    this.roots = [[]];
     for (const i of this.roots) {
-      const x = this.helpers.random_num(15);
-      for (let y = 0; y < x; y++) {
-        i.push({title: '', val: y });
+      // const x = this.helpers.random_num(15);
+        for (let y = 0; y <= this.factories - 1; y++) {
+        i.push({title: '', index: y });
+        }
+    }
+  }
+
+  removeFactory(index) {
+    console.log('removing', this.roots[0]);
+    if (this.factories !== 0) {
+      this.factories --;
+    }
+    this.roots[0].splice(index, 1);
+    for (const i of this.roots) {
+      // const x = this.helpers.random_num(15);
+      if (this.factories > 1) {
+        for (let y = 0; y <= this.factories - 1; y++) {
+        i.push({title: '', index: y });
+        }
       }
     }
-    console.log(this.roots);
+  }
+
+  renderTree() {
+    for (const i of this.roots) {
+      // const x = this.helpers.random_num(15);
+      if (this.factories > 1) {
+        for (let y = 0; y <= this.factories - 1; y++) {
+        i.push({title: '', index: y });
+        }
+      }
+    }
   }
 }

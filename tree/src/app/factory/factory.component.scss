@@ -1,0 +1,27 @@
+.row{
+    margin: 2% 0;
+    .factory-title {
+        width: 150px;
+    }
+    .factory-title:not(:focus) {
+        border-color: #fff;
+    }
+    .btn {
+        width: 150px;
+    }
+    .btn-primary {
+        margin: 1% 1% 0 0;
+    }
+    .btn-danger {
+        margin-top: 1%;
+    }
+    .card {
+        width: 340px;
+        background-color: #0d4444;
+        color: whitesmoke;
+    }
+}
+
+ul {
+    list-style-type: none;
+}
